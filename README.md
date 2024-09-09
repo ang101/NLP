@@ -1,24 +1,22 @@
 # Generative AI Course Labs and Reading Materials
 
 ## Introduction
-Welcome to the Generative AI Course at Northeastern University! This repository contains the labs and reading materials designed to help you grasp the concepts and applications of generative AI. Throughout this course, you'll explore foundational and advanced techniques, gain practical experience through hands-on labs, and delve into various generative models.
+Welcome to the Generative AI Course at Northeastern University! This repository contains the labs and reading materials designed to help you grasp the concepts and applications of Natural Language Processing. Throughout this course, you'll explore foundational and advanced techniques, gain practical experience through hands-on labs, and delve into various generative models.
 
 ## Course Description
-In the "Generative AI" course, you'll not only explore foundational techniques like Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs), but also delve into cutting-edge advancements such as Diffusion Models, Reinforcement Learning with Human Feedback (RLHF), and Graph Neural Networks (GNNs). You'll receive in-depth theoretical insights into these models, accompanied by practical exercises to reinforce your understanding. Through hands-on projects, you'll learn to harness the power of Diffusion Models for high-quality image synthesis, implement RLHF techniques to optimize generative processes with human input, and leverage Graph Neural Networks to generate structured outputs from graph-structured data. By mastering these advanced techniques, you'll be equipped to tackle real-world challenges across diverse domains, from computer vision and natural language processing to social network analysis and recommendation systems.
+Covers the fundamentals of Natural Language Processing (NLP) and its diverse applications in various engineering domains. Students will gain a comprehensive understanding of essential NLP concepts and key algorithms. The course highlights 
+how NLP can address engineering challenges in fields such as transportation, civil engineering, manufacturing, healthcare, business, commerce, and other selected engineering areas. Through a substantial course project, students will solidify their skills by applying NLP to solve practical engineering problems.
 
 ### Prerequisites
-- IE 7300, CS 6400 with minimum grades of C+
+- IE 7300
 - Proficiency with Python programming
 - Experience with TensorFlow
-- Knowledge in Linear Algebra, Probability, and Statistics
+- Knowledge in Neural networks, Machine Learning, Linear Algebra, Probability, and Statistics
 
 ## Lab Contents
 The labs in this repository are designed to provide hands-on experience with the concepts covered in the course. Each lab includes detailed instructions, code samples, and exercises to help you apply what you've learned in a practical setting. Topics include:
 - Neural Networks (FeedForward NNs, Optimization, Regularization, Dropout, Batch-normalization, CNNs, RNNs, LSTM)
-- Generative Models (GANs, VAEs, Diffusion Models)
 - Transformers (Transformers, BERT, GPT, Performer)
-- Deep Reinforcement Learning (RLHF, Chat-GPT, Alignment)
-- Graph Neural Networks
 
 ## Getting Started
 To get started with the labs and exercises in this repository, please follow these steps:
@@ -41,4 +39,4 @@ This repository is licensed under the MIT License. For more details, please refe
 
 ---
 
-We hope you find these resources helpful and enjoy your journey into the world of Generative AI! For any questions or support, please contact the course instructor or teaching assistant.
+We hope you find these resources helpful and enjoy your journey into the world of Natural Language Processing! For any questions or support, please contact the course instructor or teaching assistant.
