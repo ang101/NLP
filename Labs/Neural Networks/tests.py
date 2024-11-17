@@ -4,6 +4,7 @@ import tensorflow as tf
 import numpy as np
 
 
+
 def preprocessing_tests(X_train, X_test, y_train, y_test, num_classes=10):
   """Performs preprocessing tests on the given data.
 
