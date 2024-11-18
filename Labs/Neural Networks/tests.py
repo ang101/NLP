@@ -1,4 +1,9 @@
 import numpy as np
+from tensorflow.keras.losses import CategoricalCrossentropy
+import tensorflow as tf
+import numpy as np
+
+
 
 def preprocessing_tests(X_train, X_test, y_train, y_test, num_classes=10):
   """Performs preprocessing tests on the given data.
@@ -57,3 +62,15 @@ def test_model_accuracy(history, min_val_acc=0.5):
   """
   val_acc = max(history.history['val_accuracy'])
   assert val_acc >= min_val_acc, f"Model did not achieve minimum validation accuracy of {min_val_acc:.2f}, achieved {val_acc:.2f}"
+
+def test_check_loss_function(model):
+  """
+  Checks if the loss function used in the model is categorical cross-entropy.
+
+  Args:
+      model (tf.keras.Model): The compiled model.
+
+  Returns:
+      bool: True if the model uses CategoricalCrossentropy, False otherwise.
+  """
+  assert isinstance(model.loss, CategoricalCrossentropy), "The model does not use CategoricalCrossentropy as the loss function."
