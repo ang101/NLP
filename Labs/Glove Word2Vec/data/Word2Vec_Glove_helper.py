@@ -1,6 +1,9 @@
 
 import numpy as np
 from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+
+lemmatizer = WordNetLemmatizer()
 def tokenize_and_preprocess_text(sentence):
     tokens = word_tokenize(sentence)
     tokens=[lemmatizer.lemmatize(token) for token in tokens]
