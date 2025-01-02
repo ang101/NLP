@@ -1,4 +1,4 @@
-# Applied Natural Language Processing Course Labs and Reading Materials
+# Applied Natural Language Processing - IE7500
 
 ## Introduction
 Welcome to the Applied Natural Language Processing Course (IE-7500) at Northeastern University! This repository contains the labs and reading materials designed to help you grasp the concepts and applications of Natural Language Processing. Throughout this course, you'll explore foundational and advanced techniques, gain practical experience through hands-on labs, and delve into various generative models.
