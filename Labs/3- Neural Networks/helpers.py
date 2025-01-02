@@ -13,15 +13,32 @@ def detect_and_set_device():
     """
     return 'GPU' if tf.test.is_gpu_available() else 'CPU'
 
-def display_samples(images, labels, num_samples=16):
-    plt.figure(figsize=(8, 8))
-    for i in range(num_samples):
-        plt.subplot(4, 4, i + 1)
-        plt.imshow(images[i], cmap='gray')
-        plt.title(f"Label: {labels[i]}")
-        plt.axis('off')
-    plt.tight_layout()
-    plt.show()
+
+# Plots
+def display_image_grid(images, labels):
+  """
+  Displays a grid of images with their corresponding labels.
+
+  Args:
+    images: A numpy array of images.
+    labels: A numpy array of labels.
+  """
+  class_names = ["airplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
+
+  num_images = len(images)
+  num_cols = 8
+  num_rows = (num_images + num_cols - 1) // num_cols
+  fig, axes = plt.subplots(num_rows, num_cols, figsize=(15, 8))
+  fig.subplots_adjust(hspace=0.5)
+  for i in range(num_images):
+    row = i // num_cols
+    col = i % num_cols
+    axes[row, col].imshow(images[i])
+    # Access the first element of the array using labels[i][0]
+    axes[row, col].set_title(f"Class: {class_names[labels[i][0]]}")
+    axes[row, col].axis('off')
+  plt.tight_layout()
+  plt.show()
 
 def plot_metrics(history):
   # Plotting training & validation accuracy values
@@ -46,6 +63,36 @@ def plot_metrics(history):
 
   plt.tight_layout()
   plt.show()
+
+def plot_label_comparison(y_true, y_pred):
+  """Plots a bar chart comparing the total number of predicted labels that were equal to the total number of true labels.
+
+  Args:
+    y_true: True labels.
+    y_pred: Predicted labels.
+  """
+  class_names = ["airplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
+
+  # Calculate the confusion matrix
+  cm = confusion_matrix(y_true, y_pred)
+
+  # Get the diagonal elements of the confusion matrix (correct predictions)
+  correct_predictions = cm.diagonal()
+
+  # Sort the correct predictions and corresponding labels
+  sorted_indices = np.argsort(correct_predictions)
+  sorted_predictions = correct_predictions[sorted_indices]
+  sorted_labels = np.arange(len(correct_predictions))[sorted_indices]
+
+  # Create a bar plot
+  plt.figure(figsize=(10, 6))
+  plt.bar(sorted_labels, sorted_predictions)
+  plt.xlabel("Class Label")
+  plt.ylabel("Count")
+  plt.title("Total Number of True Predicted Labels")
+  plt.xticks(sorted_labels, [class_names[i] for i in sorted_labels])
+  plt.show()
+
 
 def plot_predictions(x_test, y_true, y_pred, num_samples=10):
   """Plots a grid of images with true and predicted labels, color-coded based on accuracy.

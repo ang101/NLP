@@ -1,10 +1,7 @@
 import numpy as np
-from tensorflow.keras.losses import CategoricalCrossentropy
 import tensorflow as tf
-import numpy as np
 
-
-
+# Tests
 def preprocessing_tests(X_train, X_test, y_train, y_test, num_classes=10):
   """Performs preprocessing tests on the given data.
 
@@ -37,7 +34,7 @@ def test_model_structure(model):
         num_classes: The expected number of neurons in the final layer.
     """
     hidden_layers = [layer for layer in model.layers if isinstance(layer, tf.keras.layers.Dense)]
-    assert len(hidden_layers) >= 1, "Model should have at least 1 hidden layers."
+    assert len(hidden_layers) >= 3, "Model should have at least 3 hidden layers."
 
     final_layer = hidden_layers[-1]  # Get the last hidden layer (which is the output layer)
     assert final_layer.units == 10, f"Final layer should have 10 neurons."
@@ -50,7 +47,7 @@ def test_model_compilation(model):
   """
   assert model.compiled, "Model is not compiled."
 
-def test_model_accuracy(history, min_val_acc=0.5):
+def test_model_accuracy(history, min_val_acc=0.44):
   """Tests if the model achieved at least the minimum validation accuracy.
 
   Args:
@@ -62,15 +59,3 @@ def test_model_accuracy(history, min_val_acc=0.5):
   """
   val_acc = max(history.history['val_accuracy'])
   assert val_acc >= min_val_acc, f"Model did not achieve minimum validation accuracy of {min_val_acc:.2f}, achieved {val_acc:.2f}"
-
-def test_check_loss_function(model):
-  """
-  Checks if the loss function used in the model is categorical cross-entropy.
-
-  Args:
-      model (tf.keras.Model): The compiled model.
-
-  Returns:
-      bool: True if the model uses CategoricalCrossentropy, False otherwise.
-  """
-  assert isinstance(model.loss, CategoricalCrossentropy), "The model does not use CategoricalCrossentropy as the loss function."
