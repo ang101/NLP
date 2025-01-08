@@ -38,7 +38,7 @@ The reading materials of this repository were collected from the internet under 
 This repository is licensed under the MIT License. For more details, please refer to the LICENSE file.
 
 ---
-
+ 
 We hope you find these resources helpful and enjoy your journey into the world of Natural Language Processing! For any questions or support, please contact the course instructor or teaching assistant.
 
 ## Star History
